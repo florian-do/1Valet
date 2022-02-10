@@ -72,7 +72,6 @@ class HomeFragment : BFragment() {
         binding.rvFeed.setController(controller)
 
         // Get the data from the API from the DataSource
-        // Get the data directly from the DB
         viewModel.data.observe(viewLifecycleOwner) {
             pagedController.submitList(it)
         }

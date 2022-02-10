@@ -25,14 +25,13 @@ class HomeViewModel: ViewModel() {
     }
 
     var data : LiveData<PagedList<IRow>>
-//    var dataSourceFactory : BDataSourceFactory<Int, IRow>? = null
 
     fun getDevices(): LiveData<List<Device>> = repo.getDevices()
     fun search(query: String): LiveData<List<Device>> = repo.search(query)
     fun filterByType(type: String): LiveData<List<Device>> = repo.filterByType(type)
     fun filterByFavorite(isFavorite: Boolean): LiveData<List<Device>> = repo.filterByFavorite(isFavorite)
 
-    // Paging 3
+    // For Paging 3
     val pagedData = Pager(
         config = PagingConfig(5),
         remoteMediator = DeviceRemoteMediator()
@@ -55,7 +54,7 @@ class HomeViewModel: ViewModel() {
         }
     }
 
-    // Paging 2 for Epoxy
+    // For Paging 2 for Epoxy
     init {
         val config = PagedList.Config.Builder()
             .setInitialLoadSizeHint(10)
