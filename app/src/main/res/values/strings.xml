@@ -1,0 +1,19 @@
+<resources>
+	<string name="app_name">1Valet</string>
+	<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+	<string name="price">$%1$d %2$s</string>
+	<string name="ok">OK</string>
+	
+	<string name="alert_error">Oops! Something went wrong…</string>
+	
+	<string name="filter_favorite">Show favorites</string>
+	<string name="filter_none_favorite">Show none favorites</string>
+	<string name="filter_type_smartlock">Show Smartlock</string>
+	<string name="filter_type_thermostat">Show Thermostat</string>
+	<string name="filter_type_android">Show Android</string>
+	<string name="filter_type_iphone">Show iPhone</string>
+	<string name="filter_reset">Reset filter</string>
+	
+	<string name="empty_results">There is no results for your search</string>
+</resources>

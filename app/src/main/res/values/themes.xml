@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<!-- Base application theme. -->
+	<style name="Theme.1Valet" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+		<!-- Primary brand color. -->
+		<item name="colorPrimary">@color/purple_500</item>
+		<item name="colorPrimaryVariant">@color/background</item>
+		<item name="colorOnPrimary">@color/white</item>
+		<!-- Secondary brand color. -->
+		<item name="colorSecondary">@color/teal_200</item>
+		<item name="colorSecondaryVariant">@color/teal_700</item>
+		<item name="colorOnSecondary">@color/black</item>
+		<!-- Status bar color. -->
+		<item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+		<item name="searchViewStyle">@style/MySearchViewStyle</item>
+		<!-- Customize your theme here. -->
+	</style>
+	
+	<style name="MySearchViewStyle" parent="Widget.AppCompat.SearchView">
+		<item name="closeIcon">@drawable/ic_close</item>
+		<item name="searchIcon">@drawable/ic_search_24</item>
+		<item name="editTextColor">@color/white</item>
+		<item name="android:textColor">@color/white</item>
+		<item name="hintTextColor">@color/white</item>
+	</style>
+	
+	<style name="CustomBottomSheetDialogTheme" parent="Theme.MaterialComponents.BottomSheetDialog">
+		<item name="bottomSheetStyle">@style/CustomBottomSheetStyle</item>
+		<item name="android:windowTranslucentStatus">true</item>
+	</style>
+	
+	<style name="CustomBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
+		<item name="android:background">@android:color/transparent</item>
+	</style>
+</resources>

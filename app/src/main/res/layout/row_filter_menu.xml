@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	xmlns:app="http://schemas.android.com/apk/res-auto">
+	
+	<data>
+		<variable name="stringId" type="Integer" />
+		<variable name="drawableId" type="Integer" />
+	</data>
+	
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:foreground="?android:attr/selectableItemBackground">
+		
+		<ImageView
+			android:id="@+id/label_icon"
+			android:background="@{drawableId}"
+			android:layout_width="22dp"
+			android:layout_height="22dp"
+			android:layout_marginStart="16dp"
+			android:backgroundTint="@color/white"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			tools:background="@drawable/ic_close"
+			tools:ignore="ContentDescription" />
+		
+		<TextView
+			android:id="@+id/label_text"
+			android:layout_width="0dp"
+			android:layout_height="50dp"
+			android:layout_marginStart="32dp"
+			android:gravity="center_vertical"
+			android:text="@{stringId}"
+			android:textSize="16sp"
+			android:textColor="@color/white"
+			app:layout_constraintStart_toEndOf="@id/label_icon"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			tools:text="Label"/>
+	
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

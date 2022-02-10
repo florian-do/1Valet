@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools">
+	
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:background="@drawable/drawable_background_bottom_sheet"
+		tools:context=".features.home.ui.bottomsheet.FilterDeviceFragment">
+		
+		<com.airbnb.epoxy.EpoxyRecyclerView
+			android:id="@+id/rvFeed"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:scrollbars="none"
+			android:layout_marginTop="24dp"
+			android:layout_marginBottom="8dp"
+			tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+			tools:listitem="@layout/row_filter_menu"
+			tools:itemCount="3"/>
+	
+	</LinearLayout>
+</layout>

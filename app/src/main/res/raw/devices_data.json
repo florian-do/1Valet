@@ -1,0 +1,134 @@
+[
+    {
+        "id": 1234,
+        "type": "thermostat",
+        "price": 149,
+        "currency": "USD",
+        "isFavorite": false,
+        "imageUrl": "https://www.nysegsmartsolutions.com/dw/image/v2/BDDP_PRD/on/demandware.static/-/Sites-masterCatalog/default/dwe9f3c5ff/Products/I-MYSSMTTHM-01-WHIT-XXXX-V1.jpg?sw=800&sh=800",
+        "coverUrl": "https://homekitnews.com/wp-content/uploads/2021/11/mysa-smart-ac-rv-fi-800x445.jpg",
+        "title": "Mysa Smart Thermostat",
+        "description": "The Mysa Smart Thermostat mounts on the wall and is designed for high-voltage electric baseboards and electric fan-forced heaters. Mysa also uses the app's geolocation feature to detect if anyone is home, so that you’re not paying to heat an empty house. Plus, Mysa works with Alexa, Google Assistant, and Apple HomeKit."
+    },
+    {
+        "id": 1235,
+        "type": "thermostat",
+        "price": 259,
+        "currency": "USD",
+        "isFavorite": false,
+        "imageUrl": "https://images.ctfassets.net/a3qyhfznts9y/6OstAApy7sOvMb1f7w2uKn/276ab3c31d3a6a302da755458cb51f72/3x2-SmartThermostat-FRONT-CAN_2x.png?w=1366&h=911&q=80&fm=png",
+        "coverUrl": "https://images.ctfassets.net/a3qyhfznts9y/6oaSLBl9dbZo6RlaELsVeE/f455a74b27d9118b28d83ded3acee093/Header_Imagery.png?w=1600&h=900&q=80&fm=png",
+        "title": "Ecobee Thermostat",
+        "description": "Learns and adapts to your schedule and delivers comfort where it counts with included SmartSensor. Live comfortably, save automatically. Experience enhanced comfort, increased savings, and advanced control with SmartThermostat with voice control and included SmartSensor ($60 value). Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas arcu fermentum eros dictum, egestas pharetra felis blandit. Maecenas nec sapien vitae ex auctor consectetur sit amet et dolor. Nam porttitor magna id mauris imperdiet, eget consectetur arcu fringilla. Aenean quis venenatis mauris, a condimentum nibh. Morbi hendrerit vehicula quam vitae semper."
+    },
+    {
+        "id": 1236,
+        "type": "smartlock",
+        "price": 219,
+        "currency": "USD",
+        "isFavorite": true,
+        "imageUrl": "https://secure.img1-fg.wfcdn.com/im/58260999/resize-h445%5Ecompr-r85/1499/149917071/DB1+SMART+DEADBOLT+LOCK+BLACK.jpg",
+        "coverUrl": "https://cdn.shopifycdn.net/s/files/1/0795/7689/files/Ultraloq-U-Bolt-Pro-WiFi.jpg?v=1620973124",
+        "title": "Ultraloq U-Bolt Pro",
+        "description": "The Ultraloq U-Bolt Pro 6 in 1 is a secure and versatile smart deadbolt that offers 6 different ways to open the lock-smartphone app, fingerprint, code on anti-peep keypad, auto unlock, magic shake of smartphone, and mechanical key. You can also share temporary codes and ekeys to your friends, guests, and service personnel for scheduled access. The included WiFi Bridge allows you to control the access to your door while you're away from your home and monitor all activity remotely."
+    },
+    {
+        "id": 1237,
+        "type": "smartlock",
+        "price": 159,
+        "currency": "USD",
+        "isFavorite": false,
+        "imageUrl": "https://cdn.shopify.com/s/files/1/0790/4327/products/6425484_rd_grande.jpg?v=1613157497",
+        "coverUrl": "https://dz02g1kgtiysz.cloudfront.net/deals/sli/200630_102223_smart-lock-03.jpg",
+        "title": "Eufy Touch Fingerprint",
+        "description": "From Eufy, the home security brand where privacy comes first. Comprehensive Safety Solutions for Your Home. Created by the same team as Anker—renowned for exceptional quality and innovation Smart Lock correctly recognizes registered fingerprints up to 98% of the time when your finger is placed correctly on the scanner. Note: Because young children and the elderly have fewer fingerprint features, it is more difficult for fingerprint scanners to identify their fingerprints."
+    },
+    {
+        "id": 1238,
+        "type": "smartlock",
+        "price": 150,
+        "currency": "USD",
+        "isFavorite": false,
+        "imageUrl": "https://ksr-ugc.imgix.net/assets/025/205/803/4a42c28c8aa1a96b8acd03fc13659c0c_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1558380326&auto=format&gif-q=50&lossless=true&s=4b9e7a2b29df6984b74823028fc2692a",
+        "coverUrl": "https://ksr-ugc.imgix.net/assets/025/287/953/fdd3f34964f7ed52e7c22d7020c8467f_original.png?ixlib=rb-4.0.2&crop=faces&w=1552&h=873&fit=crop&v=1559034824&auto=format&frame=1&q=92&s=9d2dc2aa5a9c47fbe7b398c7485ac6d9",
+        "title": "Keymitt Smart Lock",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas arcu fermentum eros dictum, egestas pharetra felis blandit. Maecenas nec sapien vitae ex auctor consectetur sit amet et dolor. Nam porttitor magna id mauris imperdiet, eget consectetur arcu fringilla. Aenean quis venenatis mauris, a condimentum nibh. Morbi hendrerit vehicula quam vitae semper."
+    },
+    {
+        "id": 1239,
+        "type": "smartlock",
+        "price": 190,
+        "currency": "USD",
+        "isFavorite": true,
+        "imageUrl": "https://images.homedepot.ca/productimages/p_1001127745.jpg?wid=1000&hei=1000&op_sharpen=1&product-images=l",
+        "coverUrl": "https://digitized.house/wp-content/uploads/2017/02/DHM_5DM30002-assure_ext_crop4_2048px-3.jpg",
+        "title": "Yale Smart Lock",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas arcu fermentum eros dictum, egestas pharetra felis blandit. Maecenas nec sapien vitae ex auctor consectetur sit amet et dolor. Nam porttitor magna id mauris imperdiet, eget consectetur arcu fringilla. Aenean quis venenatis mauris, a condimentum nibh. Morbi hendrerit vehicula quam vitae semper."
+    },
+    {
+        "id": 1240,
+        "type": "smartlock",
+        "price": 160,
+        "currency": "USD",
+        "isFavorite": false,
+        "imageUrl": "https://cdn.prod2.kustomerhostedcontent.com/media/5f6cab56313fd9001af97923/970ba7c4f9b29be38c4b3b57c2afb928.png",
+        "coverUrl": "https://www.safewise.com/app/uploads/2020/06/social-august-door-lock-review.jpg",
+        "title": "August Smart Lock",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras egestas arcu fermentum eros dictum, egestas pharetra felis blandit. Maecenas nec sapien vitae ex auctor consectetur sit amet et dolor. Nam porttitor magna id mauris imperdiet, eget consectetur arcu fringilla. Aenean quis venenatis mauris, a condimentum nibh. Morbi hendrerit vehicula quam vitae semper."
+    },
+    {
+        "id": 1241,
+        "type": "thermostat",
+        "price": 179,
+        "currency": "CAD",
+        "isFavorite": true,
+        "imageUrl": "https://cdn.pocket-lint.com/r/s/1200x/assets/images/130138-smart-home-review-nest-3-0-review-image1-9ntyrdeolk.jpg",
+        "coverUrl": "https://i.pcmag.com/imagery/reviews/05CglKkOYABZy8uFjJyfA2o-1..v1605124092.png",
+        "title": "Nest Thermostat",
+        "description": "Turn up your savings. The Nest Thermostat is a smart thermostat developed by Nest Labs and designed by Tony Fadell, Ben Filson, and Fred Bould. It is an electronic, programmable, and self-learning Wi-Fi-enabled thermostat that optimizes heating and cooling of homes and businesses to conserve energy."
+    },
+    {
+        "id": 1242,
+        "type": "iphone",
+        "price": 1199,
+        "currency": "CAD",
+        "isFavorite": true,
+        "imageUrl": "https://images.ctfassets.net/8utyj17y1gom/2Iql62LqlCDP7wNXeQ0u6m/7978ee08cae58e042beab20bb283c1c6/iPhone13-blue-group.png",
+        "coverUrl": "https://i0.wp.com/matridox.com/wp-content/uploads/2021/09/iPhone-13-header.png?fit=1200%2C643&ssl=1",
+        "title": "iPhone 13",
+        "description": "Your new superpower. Overview iPhone 13 Pro Max. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip."
+    },
+    {
+        "id": 1243,
+        "type": "iphone",
+        "price": 1399,
+        "currency": "CAD",
+        "isFavorite": true,
+        "imageUrl": "https://images.ctfassets.net/8utyj17y1gom/75YHKtAqPqEeOLrjcrKejJ/9783db1b82e2be507df00d307fd992b9/iPhone13-Pro-gold-angle.png",
+        "coverUrl": "https://www.movilzona.es/app/uploads-movilzona.es/2021/03/iPHone_12_Pro.jpeg",
+        "title": "iPhone 13 Pro",
+        "description": "Oh. So. Pro. The ultimate iPhone. Overview iPhone 13 Pro Max. The biggest Pro camera system upgrade ever. Super Retina XDR display with ProMotion for a faster, more responsive feel. Lightning-fast A15 Bionic chip."
+    },
+    {
+        "id": 1244,
+        "type": "android",
+        "price": 779,
+        "currency": "CAD",
+        "isFavorite": true,
+        "imageUrl": "https://images.ctfassets.net/t00ajdlq0g9p/3d3BGWlsyzdjv1lSNtewYT/76fe5810406f04fc1c5dbb454ed0f8d6/Pixel6-stormyBlack-front-fr.png",
+        "coverUrl": "https://9to5google.com/wp-content/uploads/sites/4/2021/08/pixel6-header-pink.jpg?quality=82&strip=all&w=1000",
+        "title": "Pixel 6",
+        "description": "A whole new Pixel, inside and out. Meet Pixel 6. It’s completely reimagined, inside and out. Powered by Tensor, Google’s first-ever processor, it’s fast, smart, and secure. The all-day battery adapts to you. * The Pixel Camera captures a moment just how you experienced it. And the Personal Safety app and the new Titan M2TM chip help protect you, your stuff, and your privacy."
+    },
+    {
+        "id": 1245,
+        "type": "android",
+        "price": 1179,
+        "currency": "CAD",
+        "isFavorite": true,
+        "imageUrl": "https://images.ctfassets.net/t00ajdlq0g9p/5vPjMQLzw1e4nmYI3SyT7A/000f21caff505ad872e13ee1edcd6493/Pixel6-Pro-stormyBlack-front-fr.png",
+        "coverUrl": "https://pbs.twimg.com/media/FCE9_NAWUAsZX6d?format=jpg&name=large",
+        "title": "Pixel 6 Pro",
+        "description": "The best of Google, built around you. Introducing Pixel 6 Pro, the completely redesigned, fully loaded Google 5G phone. * With a powerful camera system, next-gen security, and the custom-built Google Tensor processor, it’s the smartest and fastest Pixel yet."
+    }
+]
