@@ -34,4 +34,16 @@ interface DeviceDao {
 
     @Query("SELECT * FROM device WHERE title LIKE '%' || :query || '%'")
     fun search(query: String): LiveData<List<Device>>
+
+    @Query("SELECT * FROM device")
+    fun getDevicesSync(): List<Device>
+
+    @Query("SELECT * FROM device WHERE type=:type")
+    fun filterByTypeSync(type: String): List<Device>
+
+    @Query("SELECT * FROM device WHERE isFavorite=:isFavorite")
+    fun filterByFavoriteSync(isFavorite: Boolean): List<Device>
+
+    @Query("SELECT * FROM device WHERE title LIKE '%' || :query || '%'")
+    fun searchSync(query: String): List<Device>
 }

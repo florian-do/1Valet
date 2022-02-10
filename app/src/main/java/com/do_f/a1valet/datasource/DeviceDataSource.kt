@@ -4,17 +4,38 @@ import androidx.paging.PageKeyedDataSource
 import com.do_f.a1valet.api.DeviceRepo
 import com.do_f.a1valet.base.DeviceQuery
 import com.do_f.a1valet.base.IRow
-import com.do_f.a1valet.database.entity.Device
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
+@DelicateCoroutinesApi
 class DeviceDataSource(val type: DeviceQuery): PageKeyedDataSource<Int, IRow>() {
+
+    // small hack
+    private var pageIncrement = 0
 
     private val repo by lazy {
         DeviceRepo()
     }
 
+    override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, IRow>) {
+        pageIncrement = 0
+        loadDevices(0) { items, cursor ->
+            GlobalScope.launch(Dispatchers.Main) {
+                callback.onResult(items, null, cursor)
+            }
+        }
+    }
+
     override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, IRow>) {
-        loadDevices(params.key) { items, cursor ->
-            callback.onResult(items, cursor)
+        if (pageIncrement < 2) {
+            loadDevices(params.key) { items, cursor ->
+                GlobalScope.launch(Dispatchers.Main) {
+                    callback.onResult(items, cursor)
+                }
+            }
+            pageIncrement++
         }
     }
 
@@ -22,36 +43,20 @@ class DeviceDataSource(val type: DeviceQuery): PageKeyedDataSource<Int, IRow>() 
 
     }
 
-    override fun loadInitial(params: LoadInitialParams<Int>, callback: LoadInitialCallback<Int, IRow>) {
-        loadDevices(0) { items, cursor ->
-            callback.onResult(items, null, cursor)
-        }
-    }
-
     private fun loadDevices(lastIndex: Int, callback: ((List<IRow>, Int) -> Unit)) {
-        val items: List<Device> = emptyList()
-        val nextCursor: Int = 0
-        when (type) {
-            is DeviceQuery.Search -> {
-                // Get data from the api
-                // repo.search(type.query)
+        GlobalScope.launch {
+            val nextCursor: Int = 0
+            // Mimic Api Call
+            val items = when (type) {
+                is DeviceQuery.Search -> repo.searchSync(type.query)
+                is DeviceQuery.Favorite -> repo.filterByFavoriteSync(type.isFavorite)
+                is DeviceQuery.Filter -> repo.filterByTypeSync(type.type)
+                else -> repo.getDevicesSync()
             }
-            is DeviceQuery.Default -> {
-                // Get data from the api
-//                repo.getDevices()
-            }
-            is DeviceQuery.Favorite -> {
-                // Get data from the api
-                // repo.filterByFavorite(type.isFavorite)
-            }
-            is DeviceQuery.Filter -> {
-                // Get data from the api
-                // repo.filterByType(type.type)
-            }
-        }
 
-        // Process the data
-        val devices = items.map { IRow.DeviceRow(it) }
-        callback.invoke(devices, nextCursor)
+            // Process the data
+            val devices = items.map { IRow.DeviceRow(it) }
+            callback.invoke(devices, nextCursor)
+        }
     }
 }

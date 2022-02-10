@@ -1,7 +1,6 @@
 package com.do_f.a1valet.features.home.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,6 @@ import android.widget.EditText
 import androidx.appcompat.widget.SearchView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.paging.ExperimentalPagingApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.do_f.a1valet.R
@@ -18,7 +16,6 @@ import com.do_f.a1valet.base.DeviceQuery
 import com.do_f.a1valet.base.IRow
 import com.do_f.a1valet.database.entity.Device
 import com.do_f.a1valet.databinding.FragmentHomeBinding
-import com.do_f.a1valet.datasource.DeviceDataSource
 import com.do_f.a1valet.extensions.setSafeOnClickListener
 import com.do_f.a1valet.features.device.ui.DeviceDetailFragment
 import com.do_f.a1valet.features.home.controller.DevicesController
@@ -26,9 +23,6 @@ import com.do_f.a1valet.features.home.controller.DevicesPagedController
 import com.do_f.a1valet.features.home.ui.bottomsheet.FilterDeviceFragment
 import com.do_f.a1valet.features.home.viewmodel.HomeViewModel
 import com.do_f.a1valet.model.DeviceFilter
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.flow.collectLatest
-import kotlinx.coroutines.launch
 
 @ExperimentalPagingApi
 class HomeFragment : BFragment() {
@@ -37,6 +31,8 @@ class HomeFragment : BFragment() {
 
     private var doUserDidASearch = false
     private var isSearchShowed = false
+
+    private var networkType = NETWORKTYPE.ROOM
 
     private val viewModel by lazy {
         ViewModelProvider(this).get(HomeViewModel::class.java)
@@ -59,7 +55,8 @@ class HomeFragment : BFragment() {
         binding.hasData = true
         if (controller.currentData == null) {
             setSearchShowed(false)
-            callApi()
+            if (networkType == NETWORKTYPE.ROOM)
+                callApi()
         } else {
             setSearchShowed(isSearchShowed)
         }
@@ -69,7 +66,10 @@ class HomeFragment : BFragment() {
         editText.setHintTextColor(resources.getColor(R.color.white, null))
 
         binding.rvFeed.layoutManager = LinearLayoutManager(requireContext())
-        binding.rvFeed.setController(controller)
+        when (networkType) {
+            NETWORKTYPE.ROOM -> binding.rvFeed.setController(controller)
+            NETWORKTYPE.PAGING -> binding.rvFeed.setController(pagedController)
+        }
 
         // Get the data from the API from the DataSource
         viewModel.data.observe(viewLifecycleOwner) {
@@ -86,6 +86,10 @@ class HomeFragment : BFragment() {
 
     override fun initListeners() {
         controller.onRowClickListener = {
+            replace(DeviceDetailFragment.newInstance(it.id))
+        }
+
+        pagedController.onRowClickListener = {
             replace(DeviceDetailFragment.newInstance(it.id))
         }
 
@@ -114,21 +118,31 @@ class HomeFragment : BFragment() {
     }
 
     private fun callApi() {
-        viewModel.getDevices().observe(viewLifecycleOwner) { buildData(it) }
+        when (networkType) {
+            NETWORKTYPE.ROOM -> viewModel.getDevices().observe(viewLifecycleOwner) { buildData(it) }
+            NETWORKTYPE.PAGING -> viewModel.invalidate(DeviceQuery.Default())
+        }
     }
 
     private fun search(query: String) {
-        // Paging call
-        // viewModel.invalidate(DeviceQuery.Search(query))
-        viewModel.search(query).observe(viewLifecycleOwner) { buildData(it) }
+        when (networkType) {
+            NETWORKTYPE.ROOM -> viewModel.search(query).observe(viewLifecycleOwner) { buildData(it) }
+            NETWORKTYPE.PAGING -> viewModel.invalidate(DeviceQuery.Search(query))
+        }
     }
 
     private fun filterByType(type: String) {
-        viewModel.filterByType(type).observe(viewLifecycleOwner) { buildData(it) }
+        when (networkType) {
+            NETWORKTYPE.ROOM -> viewModel.filterByType(type).observe(viewLifecycleOwner) { buildData(it) }
+            NETWORKTYPE.PAGING -> viewModel.invalidate(DeviceQuery.Filter(type))
+        }
     }
 
     private fun filterByFavorite(isFavorite: Boolean) {
-        viewModel.filterByFavorite(isFavorite).observe(viewLifecycleOwner) { buildData(it) }
+        when (networkType) {
+            NETWORKTYPE.ROOM -> viewModel.filterByFavorite(isFavorite).observe(viewLifecycleOwner) { buildData(it) }
+            NETWORKTYPE.PAGING -> viewModel.invalidate(DeviceQuery.Favorite(isFavorite))
+        }
     }
 
     private fun buildData(items: List<Device>) {
@@ -183,5 +197,10 @@ class HomeFragment : BFragment() {
     companion object {
         @JvmStatic
         fun newInstance() = HomeFragment()
+    }
+
+    enum class NETWORKTYPE {
+        ROOM,
+        PAGING
     }
 }

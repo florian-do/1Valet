@@ -27,4 +27,9 @@ class DeviceRepo {
     fun filterByFavorite(isFavorite: Boolean): LiveData<List<Device>> {
         return dao.filterByFavorite(isFavorite)
     }
+
+    fun getDevicesSync(): List<Device> = dao.getDevicesSync()
+    fun searchSync(query: String): List<Device> = dao.searchSync(query)
+    fun filterByTypeSync(type: String): List<Device> = dao.filterByTypeSync(type)
+    fun filterByFavoriteSync(isFavorite: Boolean): List<Device> = dao.filterByFavoriteSync(isFavorite)
 }

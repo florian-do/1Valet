@@ -21,6 +21,10 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
+/**
+ * set networkType to ROOM before running those test
+ */
+
 @RunWith(AndroidJUnit4::class)
 class DeviceHomeTest {
 
